@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>正負の数トレーニング</title>
+<style>
+:root{font-family:system-ui,-apple-system,"Noto Sans JP",sans-serif;color:#24332e;background:#f4f6f4;font-synthesis:none;--green:#285d48;--border:#d8e0da}*{box-sizing:border-box}body{margin:0}main{width:min(100% - 32px,760px);margin:36px auto 60px}h1{font-size:clamp(22px,5vw,30px);margin:0 0 8px;letter-spacing:.03em}h2{font-size:20px;margin:0 0 18px}h3{font-size:17px}p{line-height:1.8}.muted{color:#596960;font-size:14px}.eyebrow{font-size:12px;letter-spacing:.12em;color:var(--green);margin-bottom:10px}.panel{background:white;border:1px solid var(--border);border-radius:14px;padding:26px;margin-top:22px}button{font:inherit;cursor:pointer;border:1px solid var(--border);border-radius:9px;padding:13px 18px;background:white;color:inherit;touch-action:manipulation}button:hover{background:#edf3ef}button:focus-visible{outline:3px solid #699b80;outline-offset:3px}button:disabled{cursor:default;opacity:.5}.primary{color:white;background:var(--green);border-color:var(--green);font-weight:650}.primary:hover{background:#1e4938}.wide{width:100%}.levels{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:22px 0}.level{text-align:left;padding:20px}.level[aria-pressed="true"]{border:2px solid var(--green);background:#edf4ef;padding:19px}.level strong{display:block;font-size:19px;margin-bottom:8px}.level span{font-size:14px;line-height:1.7;display:block}.row{display:flex;align-items:center;justify-content:space-between;gap:12px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}.stat{padding:14px 8px;background:#f3f6f3;border-radius:9px;text-align:center}.stat span{display:block;font-size:12px;color:#596960;margin-bottom:5px}.stat strong{font-size:22px;font-variant-numeric:tabular-nums}.progress{height:5px;background:#e8eee9;border-radius:4px;overflow:hidden}.progress div{height:100%;background:var(--green);transition:width .2s}.question{font-size:clamp(25px,5.3vw,36px);line-height:1.7;text-align:center;margin:26px 0 18px;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}.answer{display:flex;align-items:center;justify-content:center;gap:16px}.answer label{font-size:22px}.answer input{font:inherit;font-size:30px;width:200px;max-width:75%;border:2px solid #b6c7bc;border-radius:9px;padding:10px;text-align:center;color:#24332e;background:#fff;font-variant-numeric:tabular-nums}.input-controls{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:14px;max-width:510px;margin:20px auto 12px;align-items:stretch}.keys{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}.keys button{font-size:25px;min-height:56px;padding:10px}.keys .small{font-size:16px}.actions{display:flex;flex-direction:column;gap:12px;justify-content:flex-end}.actions button{min-height:64px;padding:12px 8px;line-height:1.6;overflow-wrap:anywhere}.feedback{margin:16px 0 0;padding:14px;border-radius:9px;background:#f2f5f3;line-height:1.7}.feedback.wrong{background:#fff4eb;color:#7a3c16}.feedback.correct{background:#eaf4ee;color:#285d48}.feedback{text-align:center}.feedback strong{display:block;font-size:clamp(36px,9vw,56px);line-height:1.4;margin:4px 0 10px}.feedback .encouragement{font-size:21px;font-weight:650;margin-bottom:10px}.notice{color:#8a411b;font-size:14px;line-height:1.7}.review{border-top:1px solid var(--border);padding:16px 0}.review p{margin:6px 0;overflow-wrap:anywhere}.review .expr{font-size:20px}.badge{font-size:12px;background:#f0f3f0;padding:4px 8px;border-radius:5px}.table-wrap{overflow:auto}table{border-collapse:collapse;width:100%;font-size:14px;white-space:nowrap}th,td{padding:12px 8px;text-align:left;border-bottom:1px solid var(--border)}th{font-weight:600;color:#596960}details{margin-top:18px}summary{cursor:pointer;line-height:1.8}.buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}[hidden]{display:none!important}.text-button{font-size:13px;padding:8px 10px;background:transparent}.help{border-left:3px solid #b9cebf;padding-left:14px}.error{color:#a23c27;font-size:14px;min-height:22px;margin:10px 0;text-align:center}@media(max-width:480px){main{width:calc(100% - 24px);margin-top:22px}.panel{padding:18px}.levels{grid-template-columns:1fr}.level{padding:15px}.level[aria-pressed="true"]{padding:14px}.level strong{font-size:17px}.stat strong{font-size:20px}.question{margin-top:22px}.input-controls{gap:10px}.keys{gap:6px}.keys button{min-height:54px;padding:8px 2px}.keys .small{font-size:12px}.actions button{font-size:14px;min-height:64px}}
+</style>
+</head>
+<body>
+<main>
+<header><div class="eyebrow">MATH PRACTICE</div><h1>正負の数トレーニング</h1><p class="muted">符号を確かめて、一問ずつ。</p></header>
+<section id="home" class="panel" aria-labelledby="homeTitle">
+<h2 id="homeTitle">レベルを選びましょう</h2><p>正負の数の四則計算を、レベルごとに毎回新しい20問で練習します。</p>
+<div class="levels"><button class="level" data-level="1" aria-pressed="true"><strong>レベル1 · 足し算・引き算</strong><span>各項は1桁の整数（−9〜9）<br>例：−5 − (−2)</span></button><button class="level" data-level="2" aria-pressed="false"><strong>レベル2 · 足し算・引き算</strong><span>各問で1桁と2桁の整数を混合<br>例：−24 ＋ 7 − (−3)</span></button><button class="level" data-level="3" aria-pressed="false"><strong>レベル3 · 掛け算</strong><span>1桁 × 2桁、または1桁 × 1桁 × 2桁<br>例：−3 × 4 × (−12)</span></button><button class="level" data-level="4" aria-pressed="false"><strong>レベル4 · 割り算</strong><span>正負の1〜2桁の整数どうし<br>例：−84 ÷ (−7) · 必ず割り切れます</span></button></div>
+<p class="muted">レベル1・2は1問2〜4項。レベル3は2〜3項、レベル4は2つの数の計算です。<br>問題に使う数は2桁まで。答えは整数です。答えの桁数には制限がありません。<br>画面のテンキー、またはキーボードで入力できます。時間制限はありません。</p>
+<button id="start" class="primary wide">レベル1をスタート</button>
+<details><summary>計算のヒント</summary><p class="help">「−」には、負の数を表す符号と、引き算の記号があります。<br>引き算は、引く数の符号を反対にして足し算に直せます。<br>例：−5 − (−2) ＝ −5 ＋ 2 ＝ −3<br><br>2つの数の掛け算・割り算は、同じ符号どうしなら答えは正、違う符号どうしなら答えは負になります。<br>3つの数の掛け算は、負の数が偶数個なら正、奇数個なら負になります。<br>符号を決めてから、数の大きさ（絶対値）を計算しましょう。<br>例：−12 × (−8) ＝ 96 ／ −84 ÷ 7 ＝ −12</p></details>
+<details><summary>これまでの記録 <span id="historyCount"></span></summary><p class="muted">このブラウザーに最新100回分を保存します。別の端末やブラウザーとは共有されません。ブラウザーのデータを削除すると記録も消えます。</p><div id="history"></div></details>
+</section>
+<section id="practice" class="panel" hidden aria-labelledby="practiceTitle">
+<div class="row"><h2 id="practiceTitle" style="margin:0">レベル1</h2><button id="quit" class="text-button">中断する</button></div>
+<div class="stats"><div class="stat"><span>問題</span><strong id="position">1 / 20</strong></div><div class="stat"><span>正解数</span><strong id="score">0</strong></div><div class="stat"><span>経過時間</span><strong id="timer">0:00</strong></div></div>
+<div class="progress" role="progressbar" aria-label="回答した問題数" aria-valuemin="0" aria-valuemax="20" aria-valuenow="0" id="progress"><div id="bar" style="width:0%"></div></div>
+<div id="question" class="question"></div>
+<div class="answer"><label for="answer">＝</label><input id="answer" type="text" inputmode="none" readonly autocomplete="off" aria-label="答え。画面のテンキーで入力してください" placeholder="答え"></div>
+<div id="inputError" class="error" role="alert"></div>
+<div class="input-controls" id="inputControls"><div class="keys" id="keys"><button data-key="7">7</button><button data-key="8">8</button><button data-key="9">9</button><button data-key="4">4</button><button data-key="5">5</button><button data-key="6">6</button><button data-key="1">1</button><button data-key="2">2</button><button data-key="3">3</button><button data-key="sign" aria-label="プラスとマイナスを切り替える">±</button><button data-key="0">0</button><button data-key="back" class="small" aria-label="最後の1文字を消す">1字消す</button></div>
+<div class="actions"><button data-key="clear" class="wide">全部消す</button><button id="submit" class="primary wide">答え合わせをする</button><button id="next" class="primary wide" hidden>次の問題へ</button></div></div>
+<div id="feedback" class="feedback" role="status" hidden></div>
+<p class="muted" style="text-align:center">±で符号を変更できます。Enterで答え合わせ・次へ。</p>
+</section>
+<section id="result" class="panel" hidden aria-labelledby="resultTitle"><h2 id="resultTitle" tabindex="-1">20問おつかれさまでした</h2><p id="resultLevel" class="muted"></p><div class="stats"><div class="stat"><span>正解数</span><strong id="finalScore"></strong></div><div class="stat"><span>正答率</span><strong id="finalRate"></strong></div><div class="stat"><span>かかった時間</span><strong id="finalTime"></strong></div></div><p id="saveStatus" class="muted" role="status"></p><h3>間違えた問題の振り返り</h3><div id="mistakes"></div><div class="buttons"><button id="retry" class="primary">同じレベルで新しい20問</button><button id="backHome">レベル選択へ</button></div></section>
+<p id="storageNotice" class="notice" role="status" hidden></p>
+</main>
+<script>
+'use strict';
+const $=id=>document.getElementById(id);
+const STORAGE_KEY='signed-integer-practice-v1';
+let level=1,questions=[],responses=[],index=0,correct=0,started=0,clockId=null,completedElapsed=null,active=false,locked=false,input='',savedHistory=[];
+function randomInt(min,max){return Math.floor(Math.random()*(max-min+1))+min;}
+function shuffle(items){for(let i=items.length-1;i>0;i--){const j=randomInt(0,i);[items[i],items[j]]=[items[j],items[i]];}return items;}
+function signed(n,parenthesize=false){return n<0?(parenthesize?'(−'+Math.abs(n)+')':'−'+Math.abs(n)):String(n);}
+function expression(q){let s=signed(q.terms[0]);q.ops.forEach((op,i)=>s+=' '+({'＋':'＋','+':'＋','-':'−','*':'×','/':'÷'}[op])+' '+signed(q.terms[i+1],true));return s;}
+function sumForm(q){let s=signed(q.terms[0]);q.ops.forEach((op,i)=>{const n=(op==='+'?1:-1)*q.terms[i+1];s+=' ＋ '+signed(n,true);});return s;}
+function explanation(q){
+ const op=q.ops[0];
+ if(op!=='*'&&op!=='/')return '足し算に直すと：'+sumForm(q)+' ＝ '+signed(q.answer);
+ if(op==='*'&&q.terms.length===3){const negatives=q.terms.filter(n=>n<0).length;return '負の数が'+negatives+'個（'+(negatives%2===0?'偶数':'奇数')+'個）なので、答えの符号は'+(negatives%2===0?'正（＋）':'負（−）')+'。数の大きさは '+q.terms.map(Math.abs).join(' × ')+' ＝ '+Math.abs(q.answer)+'。答えは '+signed(q.answer)+'。';}
+ const a=q.terms[0],b=q.terms[1],same=(a<0)===(b<0),sign=same?'正（＋）':'負（−）';
+ return (same?'同じ符号どうし':'違う符号どうし')+'なので、答えの符号は'+sign+'。数の大きさは '+Math.abs(a)+(op==='*'?' × ':' ÷ ')+Math.abs(b)+' ＝ '+Math.abs(q.answer)+'。答えは '+signed(q.answer)+'。';
+}
+// Exact integer division pairs; both operands stay within two digits.
+const divisionPairs=[];
+for(let divisor=2;divisor<=49;divisor++)for(let quotient=2;quotient<=Math.floor(99/divisor);quotient++)divisionPairs.push([divisor*quotient,divisor]);
+function createQuestion(selectedLevel,pattern){
+ if(selectedLevel===3){
+  const count=pattern&4?3:2;
+  const terms=Array.from({length:count},(_,i)=>randomInt(i===count-1?10:1,i===count-1?99:9)*(i<2?(pattern&(1<<i)?-1:1):(randomInt(0,1)?-1:1)));
+  return {terms,ops:Array(count-1).fill('*'),answer:terms.reduce((product,n)=>product*n,1)};
+ }
+ if(selectedLevel===4){
+  const magnitudes=divisionPairs[randomInt(0,divisionPairs.length-1)];
+  const terms=[magnitudes[0]*(pattern&1?-1:1),magnitudes[1]*(pattern&2?-1:1)];
+  return {terms,ops:['/'],answer:terms[0]/terms[1]};
+ }
+
+ const count=randomInt(2,4),terms=[],ops=[];
+ // Every set includes all sign/operator combinations for the first two terms.
+ for(let i=0;i<count;i++)terms.push(randomInt(1,9)*(randomInt(0,1)?1:-1));
+ if(selectedLevel===2){const large=randomInt(0,count-1);terms[large]=randomInt(10,99)*(terms[large]<0?-1:1);}
+ terms[0]=Math.abs(terms[0])*(pattern&1?-1:1);
+ terms[1]=Math.abs(terms[1])*(pattern&2?-1:1);
+ ops.push(pattern&4?'-':'+');
+ for(let i=1;i<count-1;i++)ops.push(randomInt(0,1)?'+':'-');
+ const answer=terms.slice(1).reduce((value,n,i)=>value+(ops[i]==='+'?n:-n),terms[0]);
+ return {terms,ops,answer};
+}
+function generateQuestions(selectedLevel){
+ const patterns=shuffle(Array.from({length:20},(_,i)=>i%8)),seen=new Set();
+ return patterns.map(pattern=>{let q,key;do{q=createQuestion(selectedLevel,pattern);key=expression(q);}while(seen.has(key));seen.add(key);return q;});
+}
+function formatTime(ms){const seconds=Math.floor(ms/1000);return Math.floor(seconds/60)+':'+String(seconds%60).padStart(2,'0');}
+function show(screen){['home','practice','result'].forEach(id=>$(id).hidden=id!==screen);}
+function chooseLevel(value){level=value;document.querySelectorAll('[data-level]').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.level)===level)));$('start').textContent='レベル'+level+'をスタート';}
+function updateTimer(){if(active)$('timer').textContent=formatTime(performance.now()-started);}
+function start(){clearInterval(clockId);questions=generateQuestions(level);responses=[];index=0;correct=0;completedElapsed=null;active=true;started=performance.now();$('practiceTitle').textContent='レベル'+level;show('practice');renderQuestion();updateTimer();clockId=setInterval(updateTimer,250);}
+function renderQuestion(){locked=false;input='';$('answer').value='';$('position').textContent=(index+1)+' / 20';$('score').textContent=correct;$('question').textContent=expression(questions[index]);$('feedback').hidden=true;$('inputError').textContent='';$('submit').hidden=false;$('next').hidden=true;document.querySelectorAll('[data-key]').forEach(b=>b.disabled=false);updateProgress();$('answer').focus({preventScroll:true});}
+function updateProgress(){const done=responses.length;$('bar').style.width=(done/20*100)+'%';$('progress').setAttribute('aria-valuenow',String(done));}
+function enterKey(key){if(!active||locked)return;$('inputError').textContent='';if(/^\d$/.test(key)){if(input.replace('-','').length>=6)return;if(input==='0')input=key;else if(input==='-0')input='-'+key;else input+=key;}else if(key==='sign'){input=input.startsWith('-')?input.slice(1):'-'+input;}else if(key==='back'){input=input.slice(0,-1);}else if(key==='clear'){input='';}$('answer').value=input.replace('-','−');}
+function submit(){
+ if(!active||locked)return;
+ if(!/^-?\d+$/.test(input)){$('inputError').textContent='答えを整数で入力してください。';return;}
+ locked=true;const q=questions[index],answer=Number(input),ok=answer===q.answer;responses.push({...q,entered:answer,ok});if(ok)correct++;
+ $('score').textContent=correct;updateProgress();document.querySelectorAll('[data-key]').forEach(b=>b.disabled=true);$('submit').hidden=true;
+ // Freeze the time on the twentieth answer, while still showing its feedback.
+ if(index===19){completedElapsed=performance.now()-started;clearInterval(clockId);$('timer').textContent=formatTime(completedElapsed);}
+ const feedback=$('feedback');feedback.className='feedback '+(ok?'correct':'wrong');feedback.replaceChildren();const heading=document.createElement('strong');heading.textContent=ok?'正解！':'おしい！';feedback.append(heading);if(!ok){const cheer=document.createElement('div');cheer.className='encouragement';cheer.textContent='次、頑張ろう！';feedback.append(cheer);const answerText=document.createElement('div');answerText.textContent='正解は '+signed(q.answer)+' です。';feedback.append(answerText);const detail=document.createElement('div');detail.textContent=explanation(q);feedback.append(detail);}feedback.hidden=false;$('next').textContent=index===19?'結果を見る':'次の問題へ';$('next').hidden=false;$('next').focus({preventScroll:true});
+}
+function next(){if(!active||!locked)return;if(index===19){finish();return;}index++;renderQuestion();}
+function storageWarning(){const n=$('storageNotice');n.textContent='このブラウザーでは記録を保存できません。今回の結果はこの画面で確認できます。';n.hidden=false;}
+function loadHistory(){try{const parsed=JSON.parse(localStorage.getItem(STORAGE_KEY)||'[]');savedHistory=Array.isArray(parsed)?parsed.filter(r=>r&&([1,2,3,4].includes(r.level))&&Number.isInteger(r.correct)&&r.correct>=0&&r.correct<=20&&Number.isFinite(r.elapsed)&&r.elapsed>=0&&typeof r.date==='string'&&!Number.isNaN(Date.parse(r.date))).slice(0,100):[];}catch{savedHistory=[];storageWarning();}renderHistory();}
+function renderHistory(){$('historyCount').textContent='（'+savedHistory.length+'回）';const host=$('history');host.replaceChildren();if(!savedHistory.length){host.textContent='まだ記録がありません。';return;}const wrap=document.createElement('div');wrap.className='table-wrap';const table=document.createElement('table'),thead=document.createElement('thead'),tr=document.createElement('tr');['日時','レベル','正解数','時間'].forEach(label=>{const th=document.createElement('th');th.scope='col';th.textContent=label;tr.append(th);});thead.append(tr);table.append(thead);const body=document.createElement('tbody');savedHistory.forEach(r=>{const row=document.createElement('tr');[new Date(r.date).toLocaleString('ja-JP',{year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'}),'レベル'+r.level,r.correct+' / 20',formatTime(r.elapsed)].forEach(value=>{const td=document.createElement('td');td.textContent=value;row.append(td);});body.append(row);});table.append(body);wrap.append(table);host.append(wrap);}
+function finish(){
+ const elapsed=completedElapsed??(performance.now()-started);active=false;clearInterval(clockId);const record={date:new Date().toISOString(),level,correct,elapsed,responses};savedHistory.unshift(record);savedHistory=savedHistory.slice(0,100);
+ try{localStorage.setItem(STORAGE_KEY,JSON.stringify(savedHistory));$('saveStatus').textContent='今回の結果を、このブラウザーに保存しました。';}catch{storageWarning();$('saveStatus').textContent='今回の結果を保存できませんでした。';}
+ renderHistory();$('resultLevel').textContent='レベル'+level+'・全20問';$('finalScore').textContent=correct+' / 20';$('finalRate').textContent=(correct*5)+'%';$('finalTime').textContent=formatTime(elapsed);
+ const host=$('mistakes');host.replaceChildren();const wrong=responses.map((r,i)=>({...r,number:i+1})).filter(r=>!r.ok);if(!wrong.length){const p=document.createElement('p');p.textContent='全問正解です。間違えた問題はありません。';host.append(p);}else wrong.forEach(r=>{const item=document.createElement('div');item.className='review';const badge=document.createElement('span');badge.className='badge';badge.textContent='第'+r.number+'問';item.append(badge);[['expr',expression(r)+' ＝ '+signed(r.answer)],['','あなたの答え：'+signed(r.entered)+'　／　正解：'+signed(r.answer)],['muted',explanation(r)]].forEach(([cls,text])=>{const p=document.createElement('p');p.className=cls;p.textContent=text;item.append(p);});host.append(item);});show('result');$('resultTitle').focus({preventScroll:true});window.scrollTo({top:0,behavior:'smooth'});
+}
+document.querySelectorAll('[data-level]').forEach(b=>b.addEventListener('click',()=>chooseLevel(Number(b.dataset.level))));
+$('start').addEventListener('click',start);$('retry').addEventListener('click',start);$('backHome').addEventListener('click',()=>{show('home');$('start').focus();});
+$('inputControls').addEventListener('click',e=>{const b=e.target.closest('[data-key]');if(b)enterKey(b.dataset.key);});$('submit').addEventListener('click',submit);$('next').addEventListener('click',next);
+$('quit').addEventListener('click',()=>{if(confirm('練習を中断してレベル選択に戻りますか？\n途中の結果は記録されません。')){active=false;clearInterval(clockId);show('home');$('start').focus();}});
+document.addEventListener('keydown',e=>{if(!active||e.ctrlKey||e.metaKey||e.altKey||e.isComposing||e.repeat)return;const key=e.key;if(key==='Enter'){// Let native buttons handle Enter once, without double submission.
+ if(document.activeElement?.tagName==='BUTTON'&&!document.activeElement.dataset.key)return;e.preventDefault();locked?next():submit();return;}
+ if(/^\d$/.test(key)){e.preventDefault();enterKey(key);}else if(key==='-'||key==='+'){e.preventDefault();if((key==='-'&&!input.startsWith('-'))||(key==='+'&&input.startsWith('-')))enterKey('sign');}else if(key==='Backspace'){e.preventDefault();enterKey('back');}else if(key==='Delete'||key==='Escape'){e.preventDefault();enterKey('clear');}});
+loadHistory();
+</script>
+</body>
+</html>
